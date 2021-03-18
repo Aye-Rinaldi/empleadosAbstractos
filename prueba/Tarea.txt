@@ -1,0 +1,19 @@
+public class Tarea{
+  //atributos
+  private int id;
+
+  //constructor
+  public Tarea(int id){
+   
+   this.id = id;
+  }
+
+  //getters y setters
+  public int getId(){
+    
+   return id;
+  }
+
+ 
+
+}

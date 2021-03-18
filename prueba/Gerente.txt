@@ -1,0 +1,74 @@
+public class Gerente extends Persona{
+
+//atributos
+private List<Tarea> tareasAsignadas;
+pirvate List<Empleado> empleados;  
+
+
+//constructor
+public Gerente(String nombre){
+
+  super(nombre);
+  tareasAsignadas = new ArrayList<>();
+  empleados = new ArrayList<>();
+}
+
+//getters y setters 
+--tareasAsignadas
+public void setTareasAsignadas(List<Tarea> tareasAsignadas){
+
+  this.tareasAsignadas = tareasAsignadas;
+}
+
+public List<Tarea> getTareasAsignadas(){
+
+  return tareasAsignadas;
+}
+
+--empleados
+public void setEmpleados(List<Empleado> empleados){
+
+   this.empleados = empleados;
+}
+
+public List<Empleado> getEmpleados(){
+
+   return empleados;
+}
+
+//metodos
+--AGREGAR EMPLEADO  A LA LISTA
+public void agregarEmpleado(Empleado empleado){
+   
+   empleados.add(empleado);
+}
+
+--AGREGAR UNA TAREA A LA LISTA DE TAREAS ASIGNADAS
+public void agregarTareaAsignada(Tarea tarea){
+
+  tareasAsignadas.add(tarea);
+}
+
+--ASIGNAR LA TAREA QUE PUSE EN LA LISTA A UN EMPLEADO
+public void asignar(Empleado empleado, Tarea tarea){
+
+  agregarTareaAsignada(tarea);
+  //o tb se puede hacer -> tareasAsignadas.add(tarea);
+
+  eliminarTareaPendiente(tarea);
+
+  //luego el empleado se agrega esta tarea a su lista de pendientes
+  empleado.agregarTareaPendiente(tarea);
+
+}
+
+
+--GERENTE CALCULA SU SALARIO
+@Override
+public Integer calcularSalario(){
+
+  return tareasAsignadas.size()*75;
+}
+
+
+}

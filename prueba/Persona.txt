@@ -1,0 +1,83 @@
+
+public abstract class Persona{
+
+//atributos
+private String nombre;
+private String dni;
+private String domicilio;
+
+private List<Tarea> tareasPendientes;
+
+//constructor
+public Persona(String nombre){
+ this.nombre = nombre;
+ tareasPendientes = new ArrayList<>();
+}
+
+//getters y setters
+--nombre
+public void setNombre(string nombre){
+  this.nombre = nombre;
+}
+
+public String getNombre(){
+  return nombre;
+}
+
+--dni
+public void setDni(){
+}
+
+TERMINARLOSSSSS
+
+--tareasPendientes
+public void setTareasPendientes(List<Tarea> tareasPendientes){
+  this.tareasPendientes = tareasPendientes;
+}
+
+
+public List<Tarea> getTareasPendientes(){
+  return tareasPendientes;
+}
+
+//METODOS
+--TRAE LA PROXIMA TAREA
+public Tarea getProximaTareaPendiente(){
+
+  return (tareasPendientes.size() > 0) ? tareasPendientes.get(0) : null;
+}
+
+--AGREGA UNA TAREA
+public void agregarTareaPendiente(Tarea tarea){
+
+ tareasPendientes.add(tarea); //agrega una terea al final de la lista
+}
+
+
+--ELIMINA UNA TAREA LUEGO DE QUE SE TERMINA
+protected void eliminarTareaPendiente(Tarea tarea){
+
+  tareasPendientes.remove(tarea);
+}
+
+
+--MOSTRAR LAS TAREAS
+public void mostrarTareas(List<Tarea> tareas){
+
+  for(Tarea t:tareas){
+    sout("/ "+ "Tarea Nro"+t.getId());
+  }
+  sout("/");
+
+}
+
+--CALCULAR SALARIO
+public abstract Integer calcularSalario();
+
+
+
+
+
+
+
+}

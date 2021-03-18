@@ -1,0 +1,116 @@
+
+clase Main
+
+//GENERA GERENTES Y EMPLEADOS
+Gerente gerente = new Gerente(nombre "Ruben");
+
+List<Empleado> empleado = new ArrayList<>(Arrays.asList(
+
+     new Empleado(nombre "Ana"),
+     new Empleado(nombre "Carla"),
+     new Empleado(nombre "Margarita")
+     ));
+
+empleados.setEmpleados(empleados);
+
+--otra forma seria (segun Pablo mejor)
+gerente.agregarEmpleado(new Empleado(nombre "pablo"));
+
+//generar tareas
+List<Tarea> tareas = new ArrayList<>(Arrays.asList(
+
+     new Tarea(id 1),
+     new Tarea(id 2),
+     new Tarea(id 3),
+     new Tarea(id 4),
+     new Tarea(id 5),
+     new Tarea(id 6),
+     new Tarea(id 7
+
+     ));
+gerente.setTareasPendientes(tareas);
+--o
+gerente.agregarTareaPendiente(new Tarea(id: 1));
+
+//ASIGNO TAREAS AL AZAR
+
+while(gerente.getTareasPendientes().size()>0){
+    
+    Double i = Math.floor(Math.random()*3); //genero un numero al azar entre 0.0 y 0.3
+    gerente.asignar(gerente.getEmpleados(),gerente.getProximaTareaPendiente().get(i.intValue()));
+}
+
+
+//CHEQUEO ASIGNACION DE TAREAS
+
+for(Empleado e:gerente.getEmpleados()){
+
+  sout("Tareas pendientes del empleado: "+e.getNombre());
+  gerente.mostrarTareas(e.getTareasPendientes());
+  sout("Tareas ejecutadas: "+e.getTareasEjecutadas().size());
+  sout("Sueldo a cobrar: "+e.calcularSalario());
+  sout("-------------------------------------");
+
+}
+
+
+//PARA CADA EMPLEADO PROCESO LAS TAREAS
+for(Empleado e:gerente.getEmpleados()){
+
+  while(e.getTareasPendientes.size()>0){
+    e.ejecutar(e.getProximaTareaPendiente());
+  }
+
+//AGREGO UNAS TAREAS PARA QUE QUEDEN PENDIENTES PARA TESTEO
+gerente.agregarTareaPendiente(new Tarea(id: 8));
+gerente.agregarTareaPendiente(new Tarea(id: 9));
+gerente.agregarTareaPendiente(new Tarea(id: 10));
+gerente.asignar(gerente.getEmpleados.get(0),gerente.getProximaTareaPendiente());
+}
+
+//HAGO LISTADO DE TAREAS REALIZADAS Y SUELDOS
+sout("Tareas asignadas del gerente: "+gerente.getNombre);
+gerente.mostrarTareas(gerente.getTareasAsignadas());
+sout("Tareas pendientes: "+gerente.getTareasPendientes().size());
+sout("Sueldo a cobrar: "+gerente.calcularSalario());
+sout("--------------------------------------------");
+
+
+for(Empleado e:gerente.getEmpleados()){
+
+  sout("Tareas ejecutadas del empleado: "+e.getNombre());
+  gerente.mostrarTareas(e.getTareasEjecutadas());
+  sout("Tareas pendientes: "+e.getTareasPendientes().size());
+  sout("Sueldo a cobrar: "+e.calcularSalario());
+  sout("----------------------------");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
